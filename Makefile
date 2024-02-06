@@ -1,7 +1,7 @@
 CC = gcc
 FLAGS = -Wall -g 
 
-all: my_graph
+all: connections
 
 my_mat.o: my_mat.c my_mat.h
 	$(CC) $(FLAGS) -c my_mat.c
@@ -9,8 +9,8 @@ my_mat.o: my_mat.c my_mat.h
 my_graph.o: my_graph.c my_mat.h
 	$(CC) $(FLAGS) -c my_graph.c
 
-my_graph: my_mat.o my_graph.o
-	$(CC) $(FLAGS) -o my_graph my_mat.o my_graph.o
+connections: my_mat.o my_graph.o
+	$(CC) $(FLAGS) -o connections my_mat.o my_graph.o
 
 
 .PHONY: clean all
