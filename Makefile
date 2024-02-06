@@ -16,4 +16,4 @@ connections: my_mat.o my_graph.o
 .PHONY: clean all
 
 clean:
-	rm -f *.o my_graph
+	rm -f *.o connections

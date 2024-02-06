@@ -7,6 +7,11 @@ int main(){
 
     char func;
 
+    char A = 'A';
+    char B = 'B';
+    char C = 'C';
+    char D = 'D';
+
     int num;
 
     int i;
@@ -17,7 +22,7 @@ int main(){
 
     scanf("%c", &func);
 
-    if(func == 'A'){
+    if(func == A){
          for(int i=0; i<size; i++){
             for(int j = 0; j<size; j++){
              scanf("%d",&num);
@@ -27,7 +32,7 @@ int main(){
        scanf("%c", &func); 
     }
 
-    else if(func == 'B'){
+    else if(func == B){
        scanf("%d",&i); 
        scanf("%d",&j);
 
@@ -40,14 +45,14 @@ int main(){
        scanf("%c", &func);
     }
 
-    else if(func == 'C'){
+    else if(func == C){
        scanf("%d",&i); 
        scanf("%d",&j);
        printf("%d", FloydWarshall(graph, i, j));
        scanf("%c", &func);
     }
-    
-    else if(func == 'D' || func == EOF){
+
+    else if(func == D){
         return 0;
     }
     else{
