@@ -7,22 +7,17 @@ int main(){
 
     char func = 0;
 
-    char A = 'A';
-    char B = 'B';
-    char C = 'C';
-    char D = 'D';
-
-    int num;
+    int num = 0;
 
     int i = 0;
     int j = 0;
 
     int graph[size][size];
 
-    while(func != D){
+    while((func != 'D') || (func != EOF)){
         scanf("%c", &func);
 
-        if(func == A){
+        if(func == 'A'){
             for(int i=0; i<size; i++){
                 for(int j = 0; j<size; j++){
                  scanf("%d",&num);
@@ -31,11 +26,11 @@ int main(){
             }
         }
 
-        else if(func == B){
+        else if(func == 'B'){
             scanf("%d",&i); 
             scanf("%d",&j);
 
-            if(isPath(i, j, graph) == 0){
+            if(hasPath(i, j, graph) == 0){
                 printf("False");
             }
             else{
@@ -43,10 +38,14 @@ int main(){
             }
         }
 
-        else if(func == C){
+        else if(func == 'C'){
             scanf("%d",&i); 
             scanf("%d",&j);
-            printf("%d", FloydWarshall(graph, i, j));
+            int path = FloydWarshall(graph, i, j);
+            if(path == 0){
+               printf("%d", -1); 
+            }
+            printf("%d", path);
         }
     }
     return 0;

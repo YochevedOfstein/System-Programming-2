@@ -4,4 +4,4 @@
 
 int FloydWarshall(int graph[][size], int i, int j);
 
-int isPath(int i, int j, int graph[][size]);
+int hasPath(int i, int j, int graph[][size]);

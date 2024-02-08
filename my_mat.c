@@ -23,11 +23,12 @@ int FloydWarshall(int graph[][size], int a, int b) {
     return dist[a][b];
 }
 
-int isPath(int i, int j, int graph[][size]){
-if(graph[i][j] == 0) {
-    return 0;
-}
-return 1;
+int hasPath(int graph[][size], int i, int j){
+    int dist = FloydWarshall(graph,i,j);
+    if(dist == 0) {
+        return 0;
+    }
+    return 1;
 }
 
 
