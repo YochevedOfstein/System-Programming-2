@@ -3,7 +3,7 @@
 
 int dist[size][size] = {0};
 
-void createMatrix(int graph[size][size]){
+void createMatrix(int graph[][size]){
     int num = 0;
 
     for(int i = 0; i < size; i++){
@@ -12,12 +12,7 @@ void createMatrix(int graph[size][size]){
             graph[i][j] = num;
         }
     }
-}
-
-int FloydWarshall(int graph[size][size], int a, int b)
-{
-
-    for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             dist[i][j] = graph[i][j];
         }
@@ -34,18 +29,25 @@ int FloydWarshall(int graph[size][size], int a, int b)
             }
         }
     }
-    return dist[a][b];
 }
 
-int hasPath(int graph[size][size], int i, int j){
-    int dist = FloydWarshall(graph,i,j);
-    if(dist == 0) {
-        printf("False");
-        return 0;
+void shortestPath(int graph[][size], int i, int j)
+{
+if((dist[i][j] == 0) || (i = j)){
+    printf("-1\n")
+}
+else{
+    printf("%d\n", dist[i][j]);
+}
+}
+
+void hasPath(int graph[][size], int i, int j){
+    int dist = dist[i][j];
+    if((dist == 0) || (i == j)) {
+        printf("False\n");
     }
     else{
-    printf("True");
-    return 1;
+    printf("True\n");
     }
 }
 

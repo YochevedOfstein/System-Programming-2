@@ -19,7 +19,6 @@ int main(){
         if(func == 'A'){
 
             createMatrix(graph);
-
         }
 
 
@@ -34,11 +33,8 @@ int main(){
         else if(func == 'C'){
             scanf("%d",&i); 
             scanf("%d",&j);
-            int path = FloydWarshall(graph, i, j);
-            if(path == 0){
-               printf("%d", -1); 
-            }
-            printf("%d", path);
+            
+            shortestPath(graph, i, j)
         }
     }
     return 0;
