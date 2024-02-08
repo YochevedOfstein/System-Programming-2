@@ -12,7 +12,7 @@ int main(){
 
     int graph[size][size] = {0};
 
-    while((func != 'D') || (func != EOF)){
+    while((func != 'D') && (func != EOF)){
 
         scanf("%c", &func);
 
@@ -26,7 +26,7 @@ int main(){
             scanf("%d",&i); 
             scanf("%d",&j);
 
-            hasPath(graph, i, j);
+            hasPath(i, j);
      
         }
 
@@ -34,10 +34,9 @@ int main(){
             scanf("%d",&i); 
             scanf("%d",&j);
             
-            shortestPath(graph, i, j);
+            shortestPath(i, j);
         }
     }
-    return 0;
 }
 
 
