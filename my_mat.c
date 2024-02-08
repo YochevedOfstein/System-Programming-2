@@ -2,7 +2,7 @@
 #define size 10
 
 
-int FloydWarshall(int graph[][size], int a, int b) {
+int FloydWarshall(int graph[size][size], int a, int b) {
     int dist[size][size];
 
     for (int i = 0; i < size; i++) {
@@ -14,8 +14,10 @@ int FloydWarshall(int graph[][size], int a, int b) {
     for (int k = 0; k < size; k++) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (dist[i][k] + dist[k][j] < dist[i][j]) {
-                    dist[i][j] = dist[i][k] + dist[k][j];
+                if(i!=j){
+                    if (dist[i][k] + dist[k][j] < dist[i][j]) {
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                    }
                 }
             }
         }
