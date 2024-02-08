@@ -7,35 +7,28 @@ int main(){
 
     char func = 0;
 
-    int num = 0;
-
     int i = 0;
     int j = 0;
 
-    int graph[size][size];
+    int graph[size][size] = {0};
 
     while((func != 'D') || (func != EOF)){
+
         scanf("%c", &func);
 
         if(func == 'A'){
-            for(int i=0; i<size; i++){
-                for(int j = 0; j<size; j++){
-                 scanf("%d",&num);
-                 graph[i][j] = num;
-                }
-            }
+
+            createMatrix(graph);
+
         }
+
 
         else if(func == 'B'){
             scanf("%d",&i); 
             scanf("%d",&j);
 
-            if(hasPath(graph, i, j) == 0){
-                printf("False");
-            }
-            else{
-                printf("True");
-            }
+            hasPath(graph, i, j)
+     
         }
 
         else if(func == 'C'){

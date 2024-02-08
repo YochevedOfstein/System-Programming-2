@@ -1,9 +1,21 @@
 #include "my_mat.h"
 #define size 10
 
+int dist[size][size] = {0};
 
-int FloydWarshall(int graph[size][size], int a, int b) {
-    int dist[size][size];
+void createMatrix(int graph[size][size]){
+    int num = 0;
+
+    for(int i = 0; i < size; i++){
+        for(int j = 0; j < size; j++){
+            scanf("%d",&num);
+            graph[i][j] = num;
+        }
+    }
+}
+
+int FloydWarshall(int graph[size][size], int a, int b)
+{
 
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
@@ -25,12 +37,16 @@ int FloydWarshall(int graph[size][size], int a, int b) {
     return dist[a][b];
 }
 
-int hasPath(int graph[][size], int i, int j){
+int hasPath(int graph[size][size], int i, int j){
     int dist = FloydWarshall(graph,i,j);
     if(dist == 0) {
+        printf("False");
         return 0;
     }
+    else{
+    printf("True");
     return 1;
+    }
 }
 
 
