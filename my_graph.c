@@ -30,7 +30,7 @@ int main(){
             scanf("%d",&i); 
             scanf("%d",&j);
 
-            if(hasPath(i, j, graph) == 0){
+            if(hasPath(graph, i, j) == 0){
                 printf("False");
             }
             else{
