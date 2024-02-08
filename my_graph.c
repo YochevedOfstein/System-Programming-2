@@ -34,7 +34,7 @@ int main(){
             scanf("%d",&i); 
             scanf("%d",&j);
             
-            shortestPath(graph, i, j)
+            shortestPath(graph, i, j);
         }
     }
     return 0;
