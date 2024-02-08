@@ -27,7 +27,7 @@ int main(){
             scanf("%d",&i); 
             scanf("%d",&j);
 
-            hasPath(graph, i, j)
+            hasPath(graph, i, j);
      
         }
 
