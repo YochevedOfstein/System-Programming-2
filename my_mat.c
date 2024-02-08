@@ -1,5 +1,6 @@
 #include "my_mat.h"
 #define size 10
+#define INF 0
 
 int dist[size][size] = {0};
 
@@ -12,19 +13,26 @@ void createMatrix(int graph[][size]){
             graph[i][j] = num;
         }
     }
-        for (int i = 0; i < size; i++) {
+
+    for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
-            dist[i][j] = graph[i][j];
+            if(i == j){
+                dist[i][j] = 0;
+            }
+            else if(graph[i][j] != 0){
+                dist[i][j] = graph[i][j];
+            }
+            else{
+                dist[i][j] = INF; 
+            }
         }
     }
 
     for (int k = 0; k < size; k++) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if(i!=j){
-                    if (dist[i][k] + dist[k][j] < dist[i][j]) {
-                        dist[i][j] = dist[i][k] + dist[k][j];
-                    }
+                  if (dist[i][k] != INF && dist[k][j] != INF && dist[i][k] + dist[k][j] < dist[i][j]) {
+                    dist[i][j] = dist[i][k] + dist[k][j];
                 }
             }
         }
@@ -34,7 +42,7 @@ void createMatrix(int graph[][size]){
 void shortestPath(int graph[][size], int i, int j)
 {
 if((dist[i][j] == 0) || (i = j)){
-    printf("-1\n")
+    printf("-1\n");
 }
 else{
     printf("%d\n", dist[i][j]);
@@ -42,8 +50,8 @@ else{
 }
 
 void hasPath(int graph[][size], int i, int j){
-    int dist = dist[i][j];
-    if((dist == 0) || (i == j)) {
+  
+    if((dist[i][j] == 0) || (i == j)) {
         printf("False\n");
     }
     else{
