@@ -54,7 +54,7 @@ int main(){
         selected_bool[i] = 0;
     }
 
-    int profit = knapSack(weights, values, selected_bool);
+    int profit = KnapSack(weights, values, selected_bool);
 
 
     printf("Maximum profit: %d\n", profit);
