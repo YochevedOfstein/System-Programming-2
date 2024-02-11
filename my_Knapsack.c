@@ -12,7 +12,7 @@ int MAX(int a, int b){
     }
 }
 
-int knapSack(int weights[], int values[], int selected_bool[]){
+int KnapSack(int weights[], int values[], int selected_bool[]){
 
     int WS[size + 1][weight + 1];
 
