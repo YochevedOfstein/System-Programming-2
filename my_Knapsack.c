@@ -58,11 +58,11 @@ int main(){
 
 
     printf("Maximum profit: %d\n", profit);
-    printf("Selected items: ");
+    printf("Selected items:");
 
     for(int i = 0; i < size; i++){
         if(selected_bool[i] == 1){
-            printf("%c ", items[i]);
+            printf(" %c", items[i]);
         }
     }
    printf("\n"); 
